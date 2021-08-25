@@ -7,6 +7,8 @@ ENEMY_WIDTH, ENEMY_HEIGHT = 91, 91
 BLUE_UFO_HEALTH, BLUE_UFO_ARMOR = 100, 0
 
 class Entity(ABC):
+    """Abstract class used for building the enemy class which includes the two required abstract methods animate and update for drawing and rendering the sprite."""
+    
     @abstractmethod
     def animate(self):
         pass
@@ -31,9 +33,6 @@ class Enemy(pygame.sprite.Sprite, Entity):
         self.is_animating = False
         self.sprites = []
         
-        # Sprite that is being used for the Enemy class
-        #assets = ['ufoBlue.png']
-        
         # Appending Idle assets for Enemy
         for asset in assets:
             self.sprites.append(pygame.transform.scale(pygame.image.load(os.path.join('Assets', 'PNG', asset)), (ENEMY_WIDTH, ENEMY_HEIGHT)))
@@ -42,7 +41,6 @@ class Enemy(pygame.sprite.Sprite, Entity):
         self.image = self.sprites[self.current_sprite]
 
         self.rect = (pos_x, pos_y)
-        #self.rect.topleft = [pos_x, pos_y]
     
     
     def animate(self):
@@ -62,15 +60,15 @@ class Enemy(pygame.sprite.Sprite, Entity):
             self.rect = (self.pos_x, self.pos_y)
             
             
-class BlueEnemyUFO(Enemy):
+class BlueUFO(Enemy):
     """Weakest UFO class requires position and its assets to draw inheriting from the enemy class."""
     def __init__(self, pos_x, pos_y, assets = ['ufoBlue.png']):
-        super(BlueEnemyUFO, self).__init__(pos_x, pos_y, assets)
+        super(BlueUFO, self).__init__(pos_x, pos_y, assets)
         
     def animate(self):
         """Animates the Idle animation for the sprite"""
-        super(BlueEnemyUFO, self).animate()
+        super(BlueUFO, self).animate()
     
     def update(self, speed):
         """Updates the sprite for UFO, speed is an float between 0 and 1 to control speed of animation."""
-        super(BlueEnemyUFO, self).update(speed)
+        super(BlueUFO, self).update(speed)
