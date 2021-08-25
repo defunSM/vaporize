@@ -1,6 +1,7 @@
 import pygame
 import os
 from player import Player
+from enemy import Enemy, BlueEnemyUFO
 
 WIDTH, HEIGHT = 1000, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -17,6 +18,8 @@ BG_MAIN_THEME_SOUND = os.path.join("Assets", "music", "Heroic Demise (New).ogg")
 pygame.display.set_caption(WIN_NAME)
 moving_sprites = pygame.sprite.Group()
 player = Player(50,HEIGHT-150)
+ufo = BlueEnemyUFO(WIDTH/2, 50)
+moving_sprites.add(ufo)
 moving_sprites.add(player)
 
 def draw_window():
