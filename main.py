@@ -19,7 +19,7 @@ BG_MAIN_THEME_SOUND = os.path.join("Assets", "music", "Heroic Demise (New).ogg")
 pygame.display.set_caption(WIN_NAME)
 moving_sprites = pygame.sprite.Group()
 player = Player()
-ufo = BlueUFO(WIDTH/2, 50)
+ufo = BlueUFO()
 moving_sprites.add(ufo)
 moving_sprites.add(player)
 

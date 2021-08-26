@@ -9,7 +9,7 @@ class Player(Entity):
     """Initializing player sprite from the Entity class"""
     def __init__(self):
         PLAYER_SCALE = (PLAYER_WIDTH, PLAYER_HEIGHT)
-        super(Player, self).__init__((50, 650), ["playerShip2_orange.png"], PLAYER_SCALE)
+        super(Player, self).__init__((50, 650), ["Assets", "PNG"],["playerShip2_orange.png"], PLAYER_SCALE)
         
     
         

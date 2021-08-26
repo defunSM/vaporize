@@ -3,21 +3,21 @@ import os
 
 class Entity(pygame.sprite.Sprite):
     
-    def __init__(self, position, assets, scale):
+    def __init__(self, position, location_of_assets, assets, scale):
         super().__init__()
         self.pos_x, self.pos_y = position
         self.is_animating = False
         self.sprites = []
 
-    
-        assets = ["playerShip2_orange.png"]
+        #location_of_assets = ["Assets", "PNG"]
+        #assets = ["playerShip2_orange.png"]
 
         # TODO: Seperate the creation of the sprites
-        # Appending Idle assets for player
+        # Appending Idle assets for player, unpacking for location of sprite
         for asset in assets:
             self.sprites.append(
                 pygame.transform.scale(
-                    pygame.image.load(os.path.join("Assets", "PNG", asset)),
+                    pygame.image.load(os.path.join(*location_of_assets, asset)),
                     scale,
                 )
             )
