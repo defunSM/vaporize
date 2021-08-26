@@ -3,6 +3,7 @@ import os
 from typing import List
 from abc import ABC, abstractmethod
 
+
 ENEMY_WIDTH, ENEMY_HEIGHT = 91, 91
 BLUE_UFO_HEALTH, BLUE_UFO_ARMOR = 100, 0
 

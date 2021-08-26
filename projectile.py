@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from enemy import Entity, Enemy
 
 # TODO: May not be needed and could just use Entity
-class Projectile(ABC):
+class Projectile(Entity):
     """Abstract class used for building various projectiles emitted from Player, Enemy classes as such have similar abstract methods of animate and update for drawing and rendering the sprite of the projectile"""
     @abstractmethod
     def animate(self):
@@ -18,7 +18,7 @@ class Projectile(ABC):
 # TODO: Change up the Entity class so that pos_x and pos_y can be accessed globally
 # TODO: How to handle sprites and movement of the missiles
 @dataclass
-class PlayerMissle(Projectile):
+class PlayerMissle(Player, Projectile):
     pos_x: int = super().pos_x
     pos_y: int = super().pos_y
     damage: int = 1
