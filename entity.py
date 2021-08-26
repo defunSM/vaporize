@@ -45,3 +45,9 @@ class Entity(pygame.sprite.Sprite):
             self.image = self.sprites[int(self.current_sprite)]
 
             self.rect = (self.pos_x, self.pos_y)
+            
+    def __repr__(self):
+        type_of_object = type(self)
+        object_info = str(self.__dict__.values())
+        
+        return f'Object: {type_of_object} -> {object_info}'
