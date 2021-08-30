@@ -3,6 +3,7 @@ import os
 
 from enemy import Enemy, BlueUFO
 from player import Player
+from projectile import PlayerMissle
 
 WIDTH, HEIGHT = 1000, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -29,6 +30,7 @@ def draw_window():
     moving_sprites.draw(WIN)
     moving_sprites.update(0.2)
     pygame.display.update()
+    print(moving_sprites)
 
 def main():
 
@@ -47,6 +49,10 @@ def main():
                 run = False
             if event.type == pygame.KEYDOWN:
                 player.pos_x += 1
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                missle = PlayerMissle(player)
+                moving_sprites.add(missle)
+                
 
         # Moving left or right
         keys_pressed = pygame.key.get_pressed()
@@ -59,6 +65,7 @@ def main():
             player.pos_y += VEL
         if keys_pressed[pygame.K_w]:
             player.pos_y -= VEL
+            
 
         draw_window()
         player.animate()
