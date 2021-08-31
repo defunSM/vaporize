@@ -27,8 +27,6 @@ class Projectile(Entity):
 PLAYER_MISSILE_WIDTH = 20
 PLAYER_MISSLE_HEIGHT = 20
 
-<<<<<<< HEAD
-
 class PlayerMissle(Entity):
     """Missles that are rendered when the player clicks, these missiles are shot forward and has a update method
     defined that is different from entity."""
@@ -56,8 +54,6 @@ class PlayerMissle(Entity):
         self.image = self.sprites[int(self.current_sprite) % self.number_of_assets]
         self.rect = (self.pos_x, self.pos_y)
 
-
-=======
 class PlayerMissle(Entity):
     def __init__(self, player):
         PLAYER_MISSLE_SCALE = (PLAYER_MISSILE_WIDTH, PLAYER_MISSLE_HEIGHT)
@@ -75,7 +71,6 @@ class PlayerMissle(Entity):
 
             self.rect = (self.pos_x, self.pos_y)
         
->>>>>>> a3936ace05864e05ea06eea3181dc8f2ff8a5654
 class EnemyMissle(Projectile):
     def animate(self):
         pass
