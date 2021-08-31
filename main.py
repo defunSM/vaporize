@@ -36,7 +36,6 @@ def draw_window():
     pygame.display.update()
     print(moving_sprites)
 
-
 def main():
 
     # sound mixer
