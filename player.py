@@ -1,5 +1,3 @@
-import pygame
-import os
 from entity import Entity
 
 PLAYER_WIDTH, PLAYER_HEIGHT = 87, 105
