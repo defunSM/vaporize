@@ -8,7 +8,8 @@ class Entity(pygame.sprite.Sprite):
         self.pos_x, self.pos_y = position
         self.is_animating = False
         self.sprites = []
-
+        self.assets = assets
+        self.number_of_assets = len(assets)
         #location_of_assets = ["Assets", "PNG"]
         #assets = ["playerShip2_orange.png"]
 
