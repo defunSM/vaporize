@@ -1,9 +1,9 @@
 import pygame
 import os
 
-from enemy import Enemy, BlueUFO
-from player import Player
-from projectile import PlayerMissle
+from vaporize.enemy import Enemy, BlueUFO
+from vaporize.player import Player
+from vaporize.projectile import PlayerMissle
 
 WIDTH, HEIGHT = 1000, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))

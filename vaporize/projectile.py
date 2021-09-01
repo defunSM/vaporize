@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from player import Player
+from .player import Player
 from abc import ABC, abstractmethod
-from enemy import Entity, Enemy
+from .enemy import Entity, Enemy
 
 # TODO: May not be needed and could just use Entity
 class Projectile(Entity):
