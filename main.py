@@ -1,9 +1,24 @@
+"""
+************************************
+* 
+* @file: main.py  
+* @authors: Salman Hossain         
+* @version: 1.00 Aug, 2021    
+*                                  
+************************************     
+"""
+
+
+"""                  [Imports]                              """
+
 import pygame
 import os
 
 from vaporize.enemy import Enemy, BlueUFO
 from vaporize.player import Player
 from vaporize.projectile import PlayerMissle
+
+"""                 [Global Variables]                      """
 
 WIDTH, HEIGHT = 1000, 750
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -29,6 +44,7 @@ moving_sprites.add(player)
 
 
 def draw_window():
+    """ Rendering the background and then the sprites, order is important"""
     WIN.fill(WHITE)
     WIN.blit(BACKGROUND, (0, 0))
     moving_sprites.draw(WIN)
@@ -38,7 +54,7 @@ def draw_window():
 
 def main():
 
-    # sound mixer
+    # sound mixer initialization
     pygame.mixer.init()
     main_theme = pygame.mixer.Sound(file=BG_MAIN_THEME_SOUND)
     main_theme.play()
